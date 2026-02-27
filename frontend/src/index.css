@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Warm light mode (fallback) */
+    --background: 0.96 0.008 60;
+    --foreground: 0.18 0.012 50;
+    --card: 0.98 0.005 60;
+    --card-foreground: 0.18 0.012 50;
+    --popover: 0.98 0.005 60;
+    --popover-foreground: 0.18 0.012 50;
+    --primary: 0.62 0.14 12;
+    --primary-foreground: 0.98 0.005 60;
+    --secondary: 0.92 0.012 55;
+    --secondary-foreground: 0.25 0.015 50;
+    --muted: 0.90 0.010 58;
+    --muted-foreground: 0.52 0.018 50;
+    --accent: 0.72 0.12 15;
+    --accent-foreground: 0.98 0.005 60;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.85 0.015 55;
+    --input: 0.88 0.012 55;
+    --ring: 0.62 0.14 12;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.94 0.010 58;
+    --sidebar-foreground: 0.18 0.012 50;
+    --sidebar-primary: 0.62 0.14 12;
+    --sidebar-primary-foreground: 0.98 0.005 60;
+    --sidebar-accent: 0.90 0.012 55;
+    --sidebar-accent-foreground: 0.25 0.015 50;
+    --sidebar-border: 0.85 0.015 55;
+    --sidebar-ring: 0.62 0.14 12;
+  }
+
+  .dark {
+    /* Warm dark editorial — charcoal with warm undertones */
+    --background: 0.16 0.010 45;
+    --foreground: 0.93 0.010 55;
+    --card: 0.20 0.012 45;
+    --card-foreground: 0.93 0.010 55;
+    --popover: 0.22 0.012 45;
+    --popover-foreground: 0.93 0.010 55;
+    --primary: 0.72 0.13 15;
+    --primary-foreground: 0.12 0.008 45;
+    --secondary: 0.26 0.014 45;
+    --secondary-foreground: 0.90 0.010 55;
+    --muted: 0.24 0.012 45;
+    --muted-foreground: 0.60 0.015 50;
+    --accent: 0.68 0.12 12;
+    --accent-foreground: 0.98 0.005 55;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 12%;
+    --ring: 0.72 0.13 15;
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.20 0.012 45;
+    --sidebar-foreground: 0.93 0.010 55;
+    --sidebar-primary: 0.72 0.13 15;
+    --sidebar-primary-foreground: 0.12 0.008 45;
+    --sidebar-accent: 0.26 0.014 45;
+    --sidebar-accent-foreground: 0.90 0.010 55;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.72 0.13 15;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.35 0.015 45);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.45 0.020 45);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .glass-card {
+    background: oklch(0.20 0.012 45 / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid oklch(1 0 0 / 0.08);
+  }
+
+  .message-user {
+    background: oklch(0.68 0.12 12 / 0.25);
+    border: 1px solid oklch(0.72 0.13 15 / 0.3);
+  }
+
+  .message-ai {
+    background: oklch(0.24 0.012 45 / 0.8);
+    border: 1px solid oklch(1 0 0 / 0.08);
+  }
+
+  .input-area {
+    background: oklch(0.20 0.012 45 / 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid oklch(1 0 0 / 0.08);
+  }
+
+  .btn-rose {
+    background: linear-gradient(135deg, oklch(0.72 0.13 15), oklch(0.62 0.14 12));
+    color: oklch(0.98 0.005 55);
+    transition: all 0.2s ease;
+  }
+
+  .btn-rose:hover:not(:disabled) {
+    background: linear-gradient(135deg, oklch(0.76 0.14 15), oklch(0.66 0.15 12));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px oklch(0.62 0.14 12 / 0.35);
+  }
+
+  .btn-rose:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  .btn-rose:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

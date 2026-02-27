@@ -1,0 +1,9 @@
+{
+  "frontend/src/index.css": "Global styles with warm dark editorial OKLCH color system, Outfit + Playfair Display fonts, custom utility classes for glass cards, message bubbles, rose accent buttons, and scrollbar styling.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Outfit/Playfair Display fonts, warm charcoal and rose/blush color tokens, custom border radii, glow shadows, and fade/typing keyframe animations.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations: useGetHistory (fetches conversation history), useSubmitPrompt (sends a prompt and invalidates history), and useClearHistory (clears conversation and invalidates history).",
+  "frontend/src/components/AppHeader.tsx": "App header with hero background image, logo icon, app title \"PromptAI Studio\", and a cinematic gradient overlay for readability.",
+  "frontend/src/components/ConversationThread.tsx": "Chat-style conversation display with right-aligned user messages, left-aligned AI responses, auto-scroll, typing indicator, empty state with suggestions, and a Clear Conversation button.",
+  "frontend/src/components/PromptInput.tsx": "Controlled prompt input with auto-resizing textarea, Enter-to-submit, Shift+Enter for newline, character counter, loading spinner, and rose-accent send button.",
+  "frontend/src/App.tsx": "Root app component composing AppHeader, ConversationThread, and PromptInput in a full-height layout with a branded footer linking to caffeine.ai."
+}

@@ -1,0 +1,99 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-prompt-input-interface-where-the-user-can-type-a-message-into-a-text-area-and-submit-it-via-a-button-or-enter-key-the-input-should-be-cleared-after-submission-and-show-a-loading-state-while-awaiting-the-backend-response",
+      "featureTitle": "Build a prompt input interface where the user can type a message into a text area and submit it via a button or Enter key. The input should be cleared after submission and show a loading state while awaiting the backend response.",
+      "files": [
+        "frontend/src/components/PromptInput.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-conversation-display-area-that-renders-the-full-prompt-response-history-as-a-chat-style-thread-user-prompts-appear-on-the-right-side-ai-responses-appear-on-the-left-side-new-messages-scroll-into-view-automatically",
+      "featureTitle": "Build a conversation display area that renders the full prompt/response history as a chat-style thread. User prompts appear on the right side; AI responses appear on the left side. New messages scroll into view automatically.",
+      "files": [
+        "frontend/src/components/ConversationThread.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-clear-conversation-button-that-calls-clearhistory-on-the-backend-and-resets-the-displayed-conversation-thread-to-empty",
+      "featureTitle": "Add a 'Clear Conversation' button that calls clearHistory() on the backend and resets the displayed conversation thread to empty.",
+      "files": [
+        "frontend/src/components/ConversationThread.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-sleek-dark-mode-editorial-visual-theme-inspired-by-the-warm-monochrome-tones-soft-gradients-and-clean-typographic-style-seen-in-the-uploaded-reference-images-use-a-warm-charcoal-dark-beige-background-off-white-text-rose-blush-accent-colors-and-a-refined-sans-serif-typeface-apply-this-theme-consistently-across-all-ui-elements-header-chat-bubbles-input-area-and-buttons",
+      "featureTitle": "Apply a sleek dark-mode editorial visual theme inspired by the warm monochrome tones, soft gradients, and clean typographic style seen in the uploaded reference images. Use a warm charcoal/dark beige background, off-white text, rose/blush accent colors, and a refined sans-serif typeface. Apply this theme consistently across all UI elements: header, chat bubbles, input area, and buttons.",
+      "files": [
+        "frontend/src/components/ConversationThread.tsx",
+        "frontend/src/components/PromptInput.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-hero-background-image-hero-bg-dim-1440x900-png-as-a-static-asset-in-the-app-header-or-page-background-from-frontend-public-assets-generated",
+      "featureTitle": "Render the generated hero background image (hero-bg.dim_1440x900.png) as a static asset in the app header or page background from frontend/public/assets/generated.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AppHeader.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

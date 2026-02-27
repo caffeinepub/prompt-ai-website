@@ -1,0 +1,59 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-27T09:40:55.679Z",
+  "summary": "The diff implements most requirements well. The backend, frontend UI components, theming, and hero image integration are all present. However, the backend uses mutable state via a List object rather than stable variables, which violates REQ-1's explicit acceptance criterion that all state be persisted in stable variables. All other requirements appear to be implemented.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "All state is persisted in stable variables",
+      "reason": "The backend uses `let history = List.empty<Exchange>();` which is a regular mutable list, not a stable variable. There is no `stable var` declaration, meaning conversation history would not survive canister upgrades.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Character count display showing remaining characters when input exceeds 400 characters, with a 500-character maximum length enforced on the textarea",
+      "reason": "The build request does not mention any character limit or character counter in the prompt input interface.",
+      "evidence": [
+        "frontend/src/components/PromptInput.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Conversation exchange count display in the thread header",
+      "reason": "The build request does not mention displaying a count of exchanges in the conversation header.",
+      "evidence": [
+        "frontend/src/components/ConversationThread.tsx"
+      ]
+    },
+    {
+      "description": "Prompt suggestion chips or quick-start prompts shown in the empty state",
+      "reason": "The build request only requires an empty state message when no conversation exists; suggestion chips are not requested.",
+      "evidence": [
+        "frontend/src/components/ConversationThread.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AppHeader.tsx",
+    "frontend/src/components/ConversationThread.tsx",
+    "frontend/src/components/PromptInput.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

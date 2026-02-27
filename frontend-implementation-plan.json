@@ -1,0 +1,109 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "PromptAI Studio Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-2",
+      "summary": "Build prompt input interface with text area, submit button, Enter key support, loading state, and auto-clear after submission",
+      "acceptanceCriteria": [
+        "Text area is visible and accepts multi-line input",
+        "Submit button and Enter key both trigger submission",
+        "Input clears after submission",
+        "Loading spinner or indicator is shown while waiting for response"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PromptInput.tsx",
+          "operation": "create",
+          "description": "Create a controlled prompt input component with a text area for multi-line input, a submit button, and loading state management. Handle Enter key (without Shift) to submit, clear input after submission, and display a loading indicator while awaiting backend response. Use the core-infrastructure component to call backend.submitPrompt(). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build conversation display area rendering prompt/response history as a chat-style thread with user messages right-aligned, AI responses left-aligned, auto-scroll, and empty state",
+      "acceptanceCriteria": [
+        "User messages shown right-aligned with distinct styling",
+        "AI responses shown left-aligned with distinct styling",
+        "Conversation scrolls to the latest message automatically",
+        "Empty state message shown when no conversation exists"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ConversationThread.tsx",
+          "operation": "create",
+          "description": "Create a conversation display component that renders an array of Exchange objects (from backend interface) as a chat-style thread. User prompts appear right-aligned; AI responses appear left-aligned with distinct styling. Implement auto-scroll to the latest message using useEffect and a ref. Display an empty state message when no conversation exists. Use the core-infrastructure component to call backend.getHistory(). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add 'Clear Conversation' button that calls clearHistory() and resets the displayed conversation thread",
+      "acceptanceCriteria": [
+        "Button is visible in the UI",
+        "Clicking it calls clearHistory on the backend",
+        "The conversation display resets to the empty state after clearing"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ConversationThread.tsx",
+          "operation": "modify",
+          "description": "Add a 'Clear Conversation' button to the conversation display component. On click, call backend.clearHistory() and reset the local conversation state to an empty array, triggering the empty state display. Use the core-infrastructure component to access the backend. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply sleek dark-mode editorial visual theme with warm charcoal/dark beige background, off-white text, rose/blush accents, and refined sans-serif typeface across all UI elements",
+      "acceptanceCriteria": [
+        "Warm dark background color applied globally",
+        "Accent color (rose/blush) used for send button and active states",
+        "All text uses a refined sans-serif font",
+        "Theme is consistent across header, chat area, input, and buttons"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global CSS to apply a warm dark editorial theme. Set the body background to a warm charcoal/dark beige color, default text to off-white, and define CSS custom properties for rose/blush accent colors. Import and apply a refined sans-serif font (e.g., Inter, Outfit, or system-ui fallback)."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the Tailwind theme with custom colors matching the warm dark editorial palette: charcoal/dark beige backgrounds, off-white text, and rose/blush accent colors. Configure typography to use a refined sans-serif font family."
+        },
+        {
+          "path": "frontend/src/components/PromptInput.tsx",
+          "operation": "modify",
+          "description": "Apply theme-consistent styling to the prompt input component: warm dark background for the text area, off-white text, and rose/blush accent color for the submit button and active states using Tailwind utility classes."
+        },
+        {
+          "path": "frontend/src/components/ConversationThread.tsx",
+          "operation": "modify",
+          "description": "Apply theme-consistent styling to the conversation thread component: warm dark background, off-white text for messages, and distinct styling for user (right-aligned, subtle rose tint) vs. AI (left-aligned, neutral warm tone) message bubbles using Tailwind utility classes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Render the generated hero background image as a static asset in the app header or page background",
+      "acceptanceCriteria": [
+        "Image is loaded from /assets/generated/hero-bg.dim_1440x900.png",
+        "Image displays correctly as a background or header decoration without routing through the backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AppHeader.tsx",
+          "operation": "create",
+          "description": "Create an app header component that displays the generated hero background image (frontend/public/assets/generated/hero-bg.dim_1440x900.png) as a background decoration. Load the image as a static asset using the public path /assets/generated/hero-bg.dim_1440x900.png. Include a logo icon (frontend/public/assets/generated/logo-icon.dim_128x128.png) and the app title 'PromptAI Studio' with theme-consistent styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the AppHeader component into the main App layout at the top of the page. Integrate PromptInput and ConversationThread components into the main content area below the header. Manage conversation state and lift state up to coordinate between input and display components."
+        }
+      ]
+    }
+  ]
+}

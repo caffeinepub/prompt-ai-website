@@ -1,0 +1,18 @@
+{
+  "backend/main.mo": "Motoko actor that handles AI prompt submission (with 500-char limit), stores prompt/response exchange history in a list, and exposes submitPrompt, getHistory, and clearHistory methods.",
+  "feature_evidence.json": "Feature evidence report mapping implemented features (prompt input, conversation display, clear history, theming, hero image) to their source files, components, and test IDs.",
+  "frontend-file-summaries.txt": "JSON document providing one-line summaries of each frontend source file, serving as a quick reference for the project's frontend structure.",
+  "frontend/index.css": "Base Tailwind CSS file defining OKLCH-based CSS custom properties for light and dark color themes including background, foreground, accent, and sidebar tokens.",
+  "frontend/index.html": "Minimal HTML entry point that mounts the React app into a root div and loads the main TypeScript module.",
+  "frontend/src/App.tsx": "Root React component that composes AppHeader, ConversationThread, and PromptInput in a full-height dark layout with a branded footer linking to caffeine.ai.",
+  "frontend/src/components/AppHeader.tsx": "Header component displaying a hero background image with gradient overlay, logo icon, and the 'PromptAI Studio' title and tagline.",
+  "frontend/src/components/ConversationThread.tsx": "Chat thread component rendering user and AI message bubbles with auto-scroll, a typing indicator, an empty state, and a Clear Conversation button backed by the useClearHistory hook.",
+  "frontend/src/components/PromptInput.tsx": "Controlled textarea input component with auto-resize, Enter-to-submit, Shift+Enter for newlines, a character counter, loading spinner, and a rose-accent send button.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and caches an ICP backend actor using React Query, supporting both anonymous and authenticated (Internet Identity) configurations, and invalidates dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and hook for Internet Identity authentication on ICP, managing login/logout state, identity persistence, and AuthClient creation with configurable options.",
+  "frontend/src/hooks/useQueries.ts": "Defines TanStack Query hooks for fetching conversation history, submitting prompts, and clearing history via the backend actor.",
+  "frontend/src/index.css": "Global CSS file that sets up Tailwind base/components/utilities, defines warm dark-mode OKLCH CSS custom properties, and adds utility classes for glass cards, message bubbles, and custom scrollbars.",
+  "frontend/src/main.tsx": "Application entry point that mounts the React app with QueryClientProvider and InternetIdentityProvider wrappers around the root App component.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the theme with custom OKLCH-based color tokens (rose, warm palette), typography/display fonts, border radii, and plugins for typography, container queries, and animations.",
+  "project_state.json": "Tracks the project's current state including version, feature inventory, known issues, image requirements, and pending/completed feature requests for the AI prompt chat application."
+}

@@ -1,0 +1,133 @@
+{
+  "kind": "build_request",
+  "title": "Prompt AI Website",
+  "projectName": "PromptAI Studio",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a backend actor with the ability to store and retrieve conversation history (prompt + response pairs) per session, including functions: submitPrompt(text: Text) which stores the prompt and returns a simulated AI-style response, getHistory() which returns all prompt/response pairs in order, and clearHistory() to reset the conversation.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Make a prompt ai website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "submitPrompt accepts a text string and returns a Text response",
+        "getHistory returns an array of {prompt: Text, response: Text} records",
+        "clearHistory resets stored conversation to empty",
+        "All state is persisted in stable variables"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build a prompt input interface where the user can type a message into a text area and submit it via a button or Enter key. The input should be cleared after submission and show a loading state while awaiting the backend response.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Make a prompt ai website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Text area is visible and accepts multi-line input",
+        "Submit button and Enter key both trigger submission",
+        "Input clears after submission",
+        "Loading spinner or indicator is shown while waiting for response"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a conversation display area that renders the full prompt/response history as a chat-style thread. User prompts appear on the right side; AI responses appear on the left side. New messages scroll into view automatically.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Make a prompt ai website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User messages shown right-aligned with distinct styling",
+        "AI responses shown left-aligned with distinct styling",
+        "Conversation scrolls to the latest message automatically",
+        "Empty state message shown when no conversation exists"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add a 'Clear Conversation' button that calls clearHistory() on the backend and resets the displayed conversation thread to empty.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Make a prompt ai website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Button is visible in the UI",
+        "Clicking it calls clearHistory on the backend",
+        "The conversation display resets to the empty state after clearing"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Apply a sleek dark-mode editorial visual theme inspired by the warm monochrome tones, soft gradients, and clean typographic style seen in the uploaded reference images. Use a warm charcoal/dark beige background, off-white text, rose/blush accent colors, and a refined sans-serif typeface. Apply this theme consistently across all UI elements: header, chat bubbles, input area, and buttons.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Make a prompt ai website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Warm dark background color applied globally",
+        "Accent color (rose/blush) used for send button and active states",
+        "All text uses a refined sans-serif font",
+        "Theme is consistent across header, chat area, input, and buttons"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Render the generated hero background image (hero-bg.dim_1440x900.png) as a static asset in the app header or page background from frontend/public/assets/generated.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Image is loaded from /assets/generated/hero-bg.dim_1440x900.png",
+        "Image displays correctly as a background or header decoration without routing through the backend"
+      ]
+    }
+  ],
+  "constraints": [
+    "No external AI/LLM API integrations — AI responses must be simulated within the Motoko backend",
+    "Do not edit any files under frontend/src/hooks/ or frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "User authentication or login",
+    "Multiple user sessions or accounts",
+    "Real external AI model integration",
+    "File or image uploads from users"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Abstract warm dark editorial background with soft moody gradients in charcoal, warm beige, and blush rose tones, subtle light bokeh, cinematic atmosphere (hero-bg.dim_1440x900.png)",
+      "Minimalist AI brain/spark logo mark in rose-gold on dark charcoal background (logo-icon.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

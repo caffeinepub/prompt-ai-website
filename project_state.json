@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A prompt AI website where users can interact with an AI through prompts.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Abstract warm dark editorial background with soft moody gradients in charcoal, warm beige, and blush rose tones, subtle light bokeh, cinematic atmosphere (hero-bg.dim_1440x900.png)\n- Minimalist AI brain/spark logo mark in rose-gold on dark charcoal background (logo-icon.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-prompt-input-interface-where-the-user-can-type-a-message-into-a-text-area-and-submit-it-via-a-button-or-enter-key-the-input-should-be-cleared-after-submission-and-show-a-loading-state-while-awaiting-the-backend-response",
+      "title": "Build a prompt input interface where the user can type a message into a text area and submit it via a button or Enter key. The input should be cleared after submission and show a loading state while awaiting the backend response.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-conversation-display-area-that-renders-the-full-prompt-response-history-as-a-chat-style-thread-user-prompts-appear-on-the-right-side-ai-responses-appear-on-the-left-side-new-messages-scroll-into-view-automatically",
+      "title": "Build a conversation display area that renders the full prompt/response history as a chat-style thread. User prompts appear on the right side; AI responses appear on the left side. New messages scroll into view automatically.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-clear-conversation-button-that-calls-clearhistory-on-the-backend-and-resets-the-displayed-conversation-thread-to-empty",
+      "title": "Add a 'Clear Conversation' button that calls clearHistory() on the backend and resets the displayed conversation thread to empty.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-sleek-dark-mode-editorial-visual-theme-inspired-by-the-warm-monochrome-tones-soft-gradients-and-clean-typographic-style-seen-in-the-uploaded-reference-images-use-a-warm-charcoal-dark-beige-background-off-white-text-rose-blush-accent-colors-and-a-refined-sans-serif-typeface-apply-this-theme-consistently-across-all-ui-elements-header-chat-bubbles-input-area-and-buttons",
+      "title": "Apply a sleek dark-mode editorial visual theme inspired by the warm monochrome tones, soft gradients, and clean typographic style seen in the uploaded reference images. Use a warm charcoal/dark beige background, off-white text, rose/blush accent colors, and a refined sans-serif typeface. Apply this theme consistently across all UI elements: header, chat bubbles, input area, and buttons.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-hero-background-image-hero-bg-dim-1440x900-png-as-a-static-asset-in-the-app-header-or-page-background-from-frontend-public-assets-generated",
+      "title": "Render the generated hero background image (hero-bg.dim_1440x900.png) as a static asset in the app header or page background from frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Prompt input interface for AI interaction",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "AI response display area",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create a backend actor with the ability to store and retrieve conversation history (prompt + response pairs) per session, including functions: submitPrompt(text: Text) which stores the prompt and returns a simulated AI-style response, getHistory() which returns all prompt/response pairs in order, and clearHistory() to reset the conversation.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Prompt AI Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
